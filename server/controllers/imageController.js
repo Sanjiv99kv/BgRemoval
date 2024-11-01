@@ -2,7 +2,7 @@ import axios from 'axios'
 import fs from 'fs';
 import FormData from 'form-data'
 import { userModel } from '../models/userModel.js';
-import { log } from 'console';
+
 
 
 export const removeBgImage = async (req, res) => {
@@ -21,7 +21,6 @@ export const removeBgImage = async (req, res) => {
             });
         }
 
-        // Check if file is present
         if (!req.file || !req.file.buffer) {
             return res.status(400).json({
                 success: false,
@@ -29,11 +28,10 @@ export const removeBgImage = async (req, res) => {
             });
         }
 
-        // Use the buffer directly
         const formdata = new FormData();
         formdata.append('image_file', req.file.buffer, {
-            filename: req.file.originalname, // Optional: helps identify the file name
-            contentType: req.file.mimetype   // Optional: sets correct MIME type
+            filename: req.file.originalname, 
+            contentType: req.file.mimetype   
         });
 
         const { data } = await axios.post("https://clipdrop-api.co/remove-background/v1", formdata, {
