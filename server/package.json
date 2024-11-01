@@ -22,6 +22,8 @@
     "multer": "^1.4.5-lts.1",
     "razorpay": "^2.9.5",
     "server": "file:",
-    "svix": "^1.37.0"
+    "stripe": "^17.3.0",
+    "svix": "^1.37.0",
+    "urlencode": "^2.0.0"
   }
 }
