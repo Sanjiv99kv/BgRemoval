@@ -74,7 +74,7 @@ export const buyCredits = async (req, res) => {
     try {
         const { pack, amount, credits, clerkId } = req.body;
 
-        const frontend_url = "http://localhost:5173";
+        const frontend_url = "https://bg-removal-frontend-lilac.vercel.app";
 
         const date = Date.now();
 
