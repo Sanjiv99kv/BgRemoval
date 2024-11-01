@@ -4,7 +4,7 @@ import Stripe from 'stripe';
 import { transactionModel } from '../models/transactionModel.js'
 import urlencode from 'urlencode'
 
-const stripe = new Stripe("sk_test_51PzVZhP2ox7QBZEwqGSdqf4bZ0MNMAR8LmxkuGwNsfCLhAWQkt9bOQWPwRi2AFxv4A9owXCWnuLn8EClvwKbMF1Z00bOAIDH90");
+const stripe = new Stripe(process.env.STIPE_SECRET);
 
 export const clerkWebhooks = async (req, res) => {
     try {
